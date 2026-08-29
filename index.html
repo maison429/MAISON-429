@@ -1,31 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAISON 429</title>
-  <meta name="description" content="MAISON 429 - Design, mobilier et création.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison 429</title>
+<meta name="description" content="Maison 429 — studio de création. Rien de beau n'est inutile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marine:#1C2B4A;
+    --lin:#F5F2EC;
+    --blanc:#FCFBF8;
+    --marine-40: rgba(28,43,74,0.4);
+    --marine-15: rgba(28,43,74,0.15);
+    --neon:#1743D1;
+    --serif-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html, body{ height:100%; }
+  body{
+    margin:0;
+    background:var(--lin);
+    color:var(--marine);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    pointer-events:none;
+    opacity:0.035;
+    z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .accent-word{ color:var(--neon); }
+
+  header{
+    padding:32px clamp(20px,5vw,48px);
+  }
+  .wordmark{
+    font-family:var(--serif-mono);
+    font-weight:500;
+    font-size:16px;
+    text-decoration:none;
+    color:var(--marine);
+    display:inline-flex; align-items:baseline; gap:2px;
+  }
+  .wordmark .m{ font-size:19px; position:relative; top:1px; }
+  .wordmark .num{ color:var(--marine-40); }
+
+  main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px clamp(20px,5vw,48px);
+    position:relative; z-index:1;
+  }
+  .hero{
+    max-width:640px;
+    text-align:center;
+  }
+  .ticked{ position:relative; padding:44px clamp(16px,4vw,56px); }
+  .ticked::before, .ticked::after,
+  .ticked .tick-br, .ticked .tick-bl{
+    content:""; position:absolute; width:14px; height:14px; pointer-events:none;
+  }
+  .ticked::before{ top:-1px; left:-1px; border-top:1px solid var(--marine); border-left:1px solid var(--marine); }
+  .ticked::after{ top:-1px; right:-1px; border-top:1px solid var(--marine); border-right:1px solid var(--marine); }
+  .ticked .tick-bl{ bottom:-1px; left:-1px; border-bottom:1px solid var(--marine); border-left:1px solid var(--marine); }
+  .ticked .tick-br{ bottom:-1px; right:-1px; border-bottom:1px solid var(--marine); border-right:1px solid var(--marine); }
+
+  .eyebrow{
+    font-family:var(--serif-mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--marine-40);
+    margin:0 0 20px;
+  }
+  .credo{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:clamp(32px, 6vw, 52px);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-family:var(--serif-mono);
+    font-size:13px;
+    color:var(--marine-40);
+    letter-spacing:0.02em;
+    margin:0;
+  }
+
+  footer{
+    padding:28px clamp(20px,5vw,48px) 32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    position:relative; z-index:1;
+  }
+  .footer-copy{
+    font-family:var(--serif-mono);
+    font-size:11px;
+    color:var(--marine-40);
+    margin:0;
+  }
+  footer a{
+    color:var(--marine-40);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  footer a:hover, footer a:focus-visible{ color:var(--marine); }
+
+  :focus-visible{ outline:2px solid var(--neon); outline-offset:3px; }
+</style>
 </head>
+<body>
 
-<body style="font-family:Arial,sans-serif;max-width:800px;margin:80px auto;padding:20px;line-height:1.6;">
+<header>
+  <a href="#top" class="wordmark" aria-label="Maison 429">
+    <span class="m">M</span><span class="num">429</span>
+  </a>
+</header>
 
-  <h1>MAISON 429</h1>
+<main id="top">
+  <div class="hero ticked">
+    <span class="tick-bl"></span><span class="tick-br"></span>
+    <p class="eyebrow">Maison 429</p>
+    <h1 class="credo">Rien <span class="accent-word">de beau</span><br>n'est inutile.</h1>
+    <p class="hero-sub">Design studies. Furniture · Objects · Interiors.</p>
+  </div>
+</main>
 
-  <p>
-    MAISON 429 est un projet dédié au design, à la création
-    et au développement de mobilier et d'objets.
-  </p>
-
-  <p>
-    Cette application utilise l'API Pinterest afin de permettre
-    la gestion et la publication de contenus MAISON 429 sur Pinterest.
-  </p>
-
-  <p>
-    <a href="politique-confidentialite.html">
-      Politique de confidentialité
-    </a>
-  </p>
+<footer>
+  <p class="footer-copy">© 2026 Maison 429</p>
+  <p class="footer-copy"><a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+</footer>
 
 </body>
 </html>
